@@ -71,3 +71,16 @@ document.addEventListener('DOMContentLoaded', function() {
   // Initialize on page load
   updateActiveItem();
 });
+
+/* Action Modals OPEN */
+$('[smart-ui-element="open"]').on('click', function() {
+  // Select the sibling element with 'smart-ui-element="modal"' and add class
+  $(this).siblings('[smart-ui-element="modal"]').addClass('is-action-open');
+});
+
+/* Action Modals CLOSE */
+$('[smart-ui-element="close"]').on('click', function() {
+  // Traverse up to the closest element with 'smart-ui-element="modal"' and remove class
+  $(this).closest('[smart-ui-element="modal"]').removeClass('is-action-open');
+});
+
